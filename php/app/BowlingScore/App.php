@@ -12,7 +12,7 @@ class App {
     }
 
     protected function displayPoints($points) {
-        echo "<h1>Received Frames</h1>";
+        echo "<h1>Received</h1>";
         $received=[];
         foreach($points as $point) {
             array_push($received, "[$point[0],$point[1]]");
