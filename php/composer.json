@@ -1,0 +1,12 @@
+{
+    "name": "bowlingscore/mlrsoft",
+    "description": "bowlingscore requirements and autoload",
+    "autoload": {
+        "psr-4": {
+            "BowlingScore\\" : "app/BowlingScore"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8"
+    }
+}

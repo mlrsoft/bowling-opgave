@@ -1,0 +1,29 @@
+version: '3'
+services:    
+  php:
+    build: 
+      context: './php/'
+    working_dir: /var/www/html
+    networks:
+      - backend
+    volumes:
+      - ./php/app:/var/www/html/app
+      - ./php/public:/var/www/html/public
+    container_name: php 
+  apache:
+    build:
+      context: './apache/'
+    depends_on:
+      - php
+    networks:
+      - frontend
+      - backend
+    ports:
+      - "${PORT}:80"
+    volumes:
+      - ./php/public:/var/www/html/public:ro
+    container_name: apache
+networks:
+  frontend:
+  backend:
+    
